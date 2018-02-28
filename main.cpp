@@ -16,23 +16,40 @@ int main()
   cout<<"\n (Q)uit";
   cout<<"\nYour choice (A/Q): ";
   cin>>input;
-  if(( input == 'a' ) || (input == 'A'))
+  if(( input == 'A' ) || (input == 'a'))
   {
   cout<<"What is the item?\n";
   cin>>items;
-  numItems++;
-  if( numItems >=6)
+  
+  if(numItems<5)
+  { 
+       list[numItems]=items;
+       numItems++;
+
+  }else
   {
 
-  cout<<"You'll need a bigger list!\n";
+      cout<<"You'll need a bigger list!\n";
   
   }
-}
+ 
+ 
+ }
 
 
-}
 
-while(( input!='q' ) && ( input!='Q' ));
-  
+
+}while(input!='q' && input!='Q' );
+ cout<<"==ITEMS TO BUY==";
+ for(int numItems=0; numItems<5; numItems++)
+ {
+
+   cout<<endl<<numItems+1 << " ";
+
+   if(list[numItems]!="")
+   {
+       cout<<list[numItems];
+       }
+       }cout<<endl;
   return 0;
 }
